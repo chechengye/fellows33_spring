@@ -3,7 +3,6 @@ package com.weichuang.domain;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component("car1")
 public class Car {
 
     private String name;

@@ -15,7 +15,6 @@ import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
 //@Component(value = "person")
-@Service(value = "person1")
 //@Repository
 //@Controller
 @Scope("singleton")
@@ -47,14 +46,14 @@ public class Person {
         this.no = no;
     }
 
-    @PostConstruct
+  /*  @PostConstruct
     public void init(){
         System.out.println("初始化方法");
     }
     @PreDestroy
     public void destroy(){
         System.out.println("销毁方法");
-    }
+    }*/
 
     @Override
     public String toString() {
