@@ -3,6 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd ">
 
-    <bean name="user" class="com.weichuang.domain.User"></bean>
+    <!--
+        name:对象的名称，可以重复，可以有特殊字符
+        class: 类的完整路径，相对路径
+        id: 不可以重复的，不可以有特殊字符
+        scope:域  ，默认单例模式，singleton   prototype:多例
 
+    -->
+    <!--<bean  name="user" class="com.weichuang.domain.User" scope="singleton" init-method="init" destroy-method="destroy" ></bean>-->
+
+    <bean name="user2" class="com.weichuang.domain.UserFactory" factory-method="createUser"></bean>
+
+    <!--实例工厂创建-->
+    <bean name="user3" factory-bean="userFactory" factory-method="createUser2"></bean>
+    <bean name="userFactory" class="com.weichuang.domain.UserFactory"></bean>
 </beans>

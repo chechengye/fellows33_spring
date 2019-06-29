@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd ">
+
+    <bean name="user" class="com.weichuang.domain.User">
+        <!--set方法注入-->
+        <!--<property name="name" value="zhangsan"></property>
+        <property name="age" value="18"></property>
+        <property name="car" ref="car"></property>-->
+        <!--构造方法注入-->
+        <constructor-arg name="name" value="32" index="0" type="java.lang.String" ></constructor-arg>
+        <constructor-arg name="age" value="18"></constructor-arg>
+        <!--<constructor-arg name="car" ref="car"></constructor-arg>-->
+    </bean>
+
+    <bean name="car" class="com.weichuang.domain.Car">
+        <property name="name" value="兰博基尼"></property>
+        <property name="color" value="红色"></property>
+    </bean>
+</beans>

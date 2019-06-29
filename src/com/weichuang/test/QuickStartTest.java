@@ -10,9 +10,15 @@ public class QuickStartTest {
     @Test
     public void testFn(){
        // User user = new User();
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        User user = (User)applicationContext.getBean("user3");
+        System.out.println(user);
+    }
+
+    @Test
+    public void testFn2(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:com/weichuang/set_zr/applicationContext.xml");
         User user = (User)applicationContext.getBean("user");
-        user.setName("张三");
         System.out.println(user);
     }
 }
