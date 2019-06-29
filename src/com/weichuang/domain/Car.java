@@ -1,5 +1,9 @@
 package com.weichuang.domain;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("car1")
 public class Car {
 
     private String name;
@@ -9,6 +13,7 @@ public class Car {
         return name;
     }
 
+    @Value("路虎")
     public void setName(String name) {
         this.name = name;
     }

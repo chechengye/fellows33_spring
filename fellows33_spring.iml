@@ -30,5 +30,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="spring-aop-4.3.9.RELEASE" level="project" />
   </component>
 </module>

@@ -11,11 +11,53 @@
         <!--构造方法注入-->
         <constructor-arg name="name" value="32" index="0" type="java.lang.String" ></constructor-arg>
         <constructor-arg name="age" value="18"></constructor-arg>
-        <!--<constructor-arg name="car" ref="car"></constructor-arg>-->
+        <constructor-arg name="car" ref="car"></constructor-arg>
     </bean>
 
+    <!--表达式注入-->
+    <bean name="user2" class="com.weichuang.domain.User">
+        <property name="name" value="#{user.name}"></property>
+        <property name="age" value="#{user.age}"></property>
+        <!--<property name="car" ref="car"></property>-->
+        <property name="car" value="#{user.car}"></property>
+    </bean>
     <bean name="car" class="com.weichuang.domain.Car">
         <property name="name" value="兰博基尼"></property>
         <property name="color" value="红色"></property>
+    </bean>
+
+    <!--复杂类型注入-->
+
+    <bean name="connection" class="com.weichuang.util.Connection">
+        <property name="arr">
+            <array>
+                <value>王五</value>
+                <value>22</value>
+                <ref bean="user"></ref>
+            </array>
+        </property>
+
+        <property name="list">
+            <list>
+                <value>赵六</value>
+                <value>66</value>
+                <ref bean="car"></ref>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="key1" value="五羊"></entry>
+                <entry key="key2" value-ref="car"></entry>
+                <entry key-ref="user2" value-ref="user"></entry>
+            </map>
+
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="jdbcUrl">jdbc:mysql:///web02</prop>
+                <prop key="driverClass">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
     </bean>
 </beans>

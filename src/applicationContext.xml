@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd ">
-
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.weichuang"/>
     <!--
         name:对象的名称，可以重复，可以有特殊字符
         class: 类的完整路径，相对路径
@@ -14,6 +16,9 @@
 
     <bean name="user2" class="com.weichuang.domain.UserFactory" factory-method="createUser"></bean>
 
+    <bean name="car2" class="com.weichuang.domain.Car">
+        <property name="name" value="奇瑞QQ"></property>
+    </bean>
     <!--实例工厂创建-->
     <bean name="user3" factory-bean="userFactory" factory-method="createUser2"></bean>
     <bean name="userFactory" class="com.weichuang.domain.UserFactory"></bean>
