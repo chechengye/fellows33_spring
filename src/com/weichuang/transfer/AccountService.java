@@ -21,6 +21,7 @@ public class AccountService {
 
         //减钱
         accountDao.reduceMoney(from , money);
+
         //int i = 1/0;
         //加钱
         accountDao.addMoney(to , money);

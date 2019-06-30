@@ -18,7 +18,7 @@ http://www.springframework.org/schema/context/spring-context.xsd http://www.spri
     </bean>
 
     <bean name="accountService" class="com.weichuang.transfer.AccountService"></bean>
-    <bean name="accountDao" class="com.weichuang.transfer.AccountDao"></bean>
+    <bean name="accountDao" class="com.weichuang.transfer.AccountDaoImpl"></bean>
 
     <!--jdbc摸版-->
     <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
