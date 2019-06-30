@@ -64,11 +64,11 @@ public class QuickStartTest {
     }
     @Test
     public void testFn7(){
-        UserService us = new UserServiceImpl(); //被代理对象
+        /*UserService us = new UserServiceImpl(); //被代理对象
         UserServiceProxyFactory userServiceProxyFactory = new UserServiceProxyFactory(us); //代理工厂
         UserService usProxy = userServiceProxyFactory.getUserService(); //返回的是代理后的对象，代理对象
         usProxy.addUser();
-        System.out.println(usProxy instanceof UserServiceImpl);
+        System.out.println(usProxy instanceof UserServiceImpl);*/
     }
 
     @Test

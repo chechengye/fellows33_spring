@@ -18,6 +18,6 @@ public class TestAop {
     private UserService userService;
     @Test
     public void testFn(){
-        userService.addUser();
+        userService.updateUser();
     }
 }

@@ -6,7 +6,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public void addUser() {
         System.out.println("添加用户");
-        int i= 1/0;
+        //int i= 1/0;
     }
 
     @Override

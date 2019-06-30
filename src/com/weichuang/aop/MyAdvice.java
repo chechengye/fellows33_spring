@@ -1,15 +1,25 @@
 package com.weichuang.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 
+@Aspect
 public class MyAdvice {
 
+    @Pointcut("execution(* com.weichuang.proxy.*ServiceImpl.*(..))")
+    public void pc(){ }
+
     //前置通知
+    @Before("MyAdvice.pc()")
     public void before(){
         System.out.println("前置通知");
     }
 
     //后置通知
+    @AfterReturning("execution(* com.weichuang.proxy.*ServiceImpl.*(..))")
     public void afterReturning(){
         System.out.println("后置通知，可正常返回的");
     }
